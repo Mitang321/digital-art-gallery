@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ImageDetails.css";
 
-const ImageDetails = ({ image, onClose }) => {
+function ImageDetails({ image, onClose }) {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  if (!image || !image.src) {
+    return null;
+  }
+
+  const handleZoomToggle = () => {
+    setIsZoomed(!isZoomed);
+  };
+
   return (
-    <div className="image-details-overlay">
-      <div className="image-details">
+    <div className="image-details-overlay" onClick={onClose}>
+      <div className="image-details" onClick={(e) => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>
           &times;
         </button>
         <div className="image-container">
-          <img src={image.src} alt={image.title} className="zoomable-image" />
+          <img
+            src={image.src}
+            alt={image.title || "Image"}
+            className={`zoomable-image ${isZoomed ? "zoomed" : ""}`}
+            onClick={handleZoomToggle}
+          />
         </div>
-        <h2>{image.title}</h2>
-        <p>
-          <strong>Artist:</strong> {image.artist}
-        </p>
-        <p>
-          <strong>Description:</strong> {image.description}
-        </p>
+        <h2>{image.title || "No Title"}</h2>
+        <p>{image.description || "No Description"}</p>
+        <div className="social-sharing">
+          <button>Share on Facebook</button>
+          <button>Share on Twitter</button>
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default ImageDetails;

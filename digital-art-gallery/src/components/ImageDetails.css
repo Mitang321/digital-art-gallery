@@ -64,3 +64,58 @@ p {
   font-size: 16px;
   margin: 5px 0;
 }
+.image-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-details {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.zoomable-image {
+  max-width: 100%;
+  max-height: 60vh;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
+.social-sharing {
+  margin-top: 20px;
+}
+
+.social-sharing button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
