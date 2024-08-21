@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ImageUpload from "./components/ImageUpload";
 import Gallery from "./components/Gallery";
+import "./App.css";
 
-const App = () => {
+function App() {
   const [images, setImages] = useState([]);
 
   const handleUpload = (image) => {
@@ -16,6 +17,6 @@ const App = () => {
       <Gallery images={images} />
     </div>
   );
-};
+}
 
 export default App;
