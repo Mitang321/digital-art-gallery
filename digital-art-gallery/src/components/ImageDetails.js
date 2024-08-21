@@ -3,14 +3,21 @@ import "./ImageDetails.css";
 
 const ImageDetails = ({ image, onClose }) => {
   return (
-    <div className="overlay">
-      <div className="modal">
-        <button onClick={onClose} className="close-button">
-          Close
+    <div className="image-details-overlay">
+      <div className="image-details">
+        <button className="close-button" onClick={onClose}>
+          &times;
         </button>
-        <img src={image.src} alt="Detailed view" className="modal-image" />
-        <h2 className="modal-title">{image.title}</h2>
-        <p className="modal-description">{image.description}</p>
+        <div className="image-container">
+          <img src={image.src} alt={image.title} className="zoomable-image" />
+        </div>
+        <h2>{image.title}</h2>
+        <p>
+          <strong>Artist:</strong> {image.artist}
+        </p>
+        <p>
+          <strong>Description:</strong> {image.description}
+        </p>
       </div>
     </div>
   );
