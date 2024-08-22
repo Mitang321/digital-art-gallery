@@ -1,0 +1,40 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-section {
+  max-width: 600px;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.get-started-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #ff6b6b;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: #ff4757;
+}

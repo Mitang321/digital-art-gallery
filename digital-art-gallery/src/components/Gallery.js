@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import ImageDetails from "./ImageDetails";
+import ImageUpload from "./ImageUpload";
 import "./Gallery.css";
 
 const Gallery = ({ images }) => {
+  const [imageList, setImageList] = useState(images || []);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
@@ -43,7 +45,11 @@ const Gallery = ({ images }) => {
     setSelectedImage(null);
   };
 
-  const filteredImages = images.filter((image) => {
+  const handleUpload = (newImage) => {
+    setImageList([...imageList, newImage]);
+  };
+
+  const filteredImages = imageList.filter((image) => {
     const matchesCategory =
       selectedCategory === "All" || image.category === selectedCategory;
     const matchesSearchQuery = image.title
@@ -78,6 +84,7 @@ const Gallery = ({ images }) => {
 
   return (
     <div className="gallery">
+      <ImageUpload onUpload={handleUpload} />
       {selectedImage && (
         <ImageDetails image={selectedImage} onClose={handleCloseDetails} />
       )}
