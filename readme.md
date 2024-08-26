@@ -2,6 +2,11 @@
 
 Welcome to the **Digital Art Gallery**! This is a React-based platform that allows artists to showcase their digital artwork and art.
 
+## Live Preview
+
+[Live Preview](https://digital-art-gallery.vercel.app/)
+
+
 ## Features
 
 - **Various Categories**: Browse through a vast collection of digital art, paintings, photography, sculptures, and more.
